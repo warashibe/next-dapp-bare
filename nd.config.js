@@ -1,4 +1,11 @@
-module.exports = {
+import R from "ramdam"
+let local = {}
+
+try {
+  local = require("nd.config.local")
+} catch (e) {}
+
+const prod = {
   id: "next-dapp",
   html: {
     title: "Next Dapp | The Bridge between Web 2.0 and 3.0",
@@ -9,3 +16,4 @@ module.exports = {
     "theme-color": "#03414D"
   }
 }
+module.exports = R.mergeAll([prod, local])
