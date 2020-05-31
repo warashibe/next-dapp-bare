@@ -5,7 +5,7 @@ const nextConfig = {
   generateInDevMode: true,
   generateSw: false,
   workboxOpts: {
-    swDest: "static/service-worker.js",
+    swDest: "public/static/service-worker.js",
     swSrc: __dirname + "/lib/sw.js"
   }
 }

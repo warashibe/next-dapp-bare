@@ -1,6 +1,6 @@
 import { useEffect, Fragment } from "react"
 import R from "ramdam"
-import binder from "../lib/binder"
+import binder from "lib/binder"
 
 export default binder(
   props => {
