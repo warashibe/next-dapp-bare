@@ -1,9 +1,7 @@
 {
-  "core":{
-    {
-      "epics": [ ],
-      "props": [ ],
-      "components": [ "Conf" ]
-    }
+  "core": {
+    "epics": [ ],
+    "props": [ ],
+    "components": [ "Conf" ]
   }
 }

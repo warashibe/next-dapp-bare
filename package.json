@@ -1,6 +1,6 @@
 {
   "name": "next-dapp-bare",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "dependencies": {
     "@nextdapp/core": "^0.8.4",
     "next": "^9.4.4",
