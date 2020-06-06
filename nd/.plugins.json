@@ -1,0 +1,9 @@
+{
+  "core":{
+    {
+      "epics": [ ],
+      "props": [ ],
+      "components": [ "Conf" ]
+    }
+  }
+}

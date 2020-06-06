@@ -2,7 +2,7 @@ import R from "ramdam"
 let local = {}
 
 try {
-  local = require("nd.config.local")
+  local = require("nd/conf.local")
 } catch (e) {}
 
 const prod = {

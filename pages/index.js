@@ -1,10 +1,9 @@
 import { useEffect, Fragment } from "react"
 import R from "ramdam"
-import binder, { bind } from "lib/binder"
-import { Conf as _conf } from "nd-core"
-const [Conf] = bind([_conf])
+import bind from "nd/bind"
+import Conf from "nd/core/Conf"
 
-const Count = binder(
+const Count = bind(
   props => (
     <div style={{ textAlign: "center" }}>
       <div
@@ -27,10 +26,10 @@ const Count = binder(
     </div>
   ),
   ["count"],
-  ["set"]
+  []
 )
 
-export default binder(
+export default bind(
   props => {
     useEffect(() => {
       props.test()

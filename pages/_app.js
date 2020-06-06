@@ -1,29 +1,15 @@
-import { Fragment } from "react"
-import { createWrapper } from "next-redux-wrapper"
-import { _app, reducer } from "nd-core"
+import R from "ramdam"
+import { _app, addEpic } from "@nextdapp/core"
 import "normalize.css"
-import conf from "nd.config"
-import init from "lib/init"
-import epics from "lib/epics"
-const links = []
-const scripts = []
+import * as custom from "lib/custom"
+import conf from "nd/conf"
+import * as _init from "nd/.nextdapp-props"
+import * as _epics from "nd/.nextdapp"
+const predefined = R.mapObjIndexed((v, k, o) => addEpic(k, v))(_epics)
+const custom_epics = R.mapObjIndexed((v, k, o) => addEpic(k, v))(custom)
 
-const { initStore, PostScripts, MyHead } = _app({
+export default _app({
   conf,
-  reducer: reducer({ init, conf }),
-  links,
-  scripts,
-  epics
+  epics: R.mergeAll([predefined, custom_epics]),
+  init: _init
 })
-
-export default createWrapper(initStore).withRedux(
-  ({ Component, pageProps }) => {
-    return (
-      <Fragment>
-        <MyHead />
-        <Component {...pageProps} conf={conf} />
-        <PostScripts />
-      </Fragment>
-    )
-  }
-)
