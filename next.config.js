@@ -1,5 +1,7 @@
 const path = require("path")
 const withOffline = require("next-offline")
+const R = require("ramdam")
+
 const nextConfig = {
   target: "serverless",
   transformManifest: manifest => ["/"].concat(manifest),
@@ -10,14 +12,19 @@ const nextConfig = {
     swSrc: __dirname + "/lib/sw.js"
   },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    config.resolve.alias["next-redux-wrapper"] = path.resolve(
-      __dirname,
-      "node_modules/next-redux-wrapper"
-    )
-    config.resolve.alias["react-redux"] = path.resolve(
-      __dirname,
-      "node_modules/react-redux"
-    )
+    R.compose(
+      R.forEach(
+        v =>
+          (config.resolve.alias[v] = path.resolve(
+            __dirname,
+            `node_modules/${v}`
+          ))
+      ),
+      R.reduce(R.concat, ["next-redux-wrapper", "react-redux"]),
+      R.filter(R.xNil),
+      R.pluck("peer"),
+      R.values
+    )(require("./nd/.plugins"))
     return config
   }
 }
