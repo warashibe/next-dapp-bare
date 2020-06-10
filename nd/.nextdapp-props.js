@@ -4,5 +4,5 @@ const mergeProps = (name, obj) => {
     props[`${k}$${name}`] = obj[k]
   }
 }
-
+mergeProps("core", require("@nextdapp/core").init)
 export default props
