@@ -1176,12 +1176,11 @@
   integrity sha512-9nKENeWRI6kQk44TbeqleIVtNLfcS3klVUepzl/ZCqzR5Bi06uqBCD277hdVvG/wL1pxA+R/pgJQLqnF5E2wPQ==
 
 "@nextdapp/core@^0.8.8":
-  version "0.8.8"
-  resolved "https://registry.yarnpkg.com/@nextdapp/core/-/core-0.8.8.tgz#8797ea3090a6d66113e9a13e9f6f5a291039ed42"
-  integrity sha512-hbrbY9lI75eAa46qVWVUlyTzUGpUbUOiaQw2XCYAXdAlv7x/jhCz69nQyV8fMDNHjojebESVeYfhzafqQbnyEA==
+  version "0.8.10"
+  resolved "https://registry.yarnpkg.com/@nextdapp/core/-/core-0.8.10.tgz#2a9249e3cf8d4faf65d402c7b07463acde49ea0a"
+  integrity sha512-vMKzeidiplR70YImA0LDlQv/CW89L2tuvJaAQ8/4lFcZ1YM1gwSSfnGqUz2BhW3au5KPy3yYNi2P6Dko5k3eKQ==
   dependencies:
     isomorphic-fetch "^2.2.1"
-    ramda "^0.27.0"
     redux "^4.0.5"
     redux-observable "^1.2.0"
     redux-thunk "^2.3.0"
