@@ -1,6 +1,15 @@
 const path = require("path")
 const withOffline = require("next-offline")
-const R = require("ramdam")
+
+const compose = require("ramda/src/compose")
+const forEach = require("ramda/src/forEach")
+const reduce = require("ramda/src/reduce")
+const concat = require("ramda/src/concat")
+const filter = require("ramda/src/filter")
+const values = require("ramda/src/values")
+const pluck = require("ramda/src/pluck")
+const isNil = require("ramda/src/isNil")
+const complement = require("ramda/src/complement")
 
 const nextConfig = {
   target: "serverless",
@@ -12,21 +21,20 @@ const nextConfig = {
     swSrc: __dirname + "/lib/sw.js"
   },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    R.compose(
-      R.forEach(
+    compose(
+      forEach(
         v =>
           (config.resolve.alias[v] = path.resolve(
             __dirname,
             `node_modules/${v}`
           ))
       ),
-      R.reduce(R.concat, ["next-redux-wrapper", "react-redux"]),
-      R.filter(R.xNil),
-      R.pluck("peer"),
-      R.values
+      reduce(concat, ["next-redux-wrapper", "react-redux", "ramda"]),
+      filter(complement(isNil)),
+      pluck("peer"),
+      values
     )(require("./nd/.plugins"))
     return config
   }
 }
-
 module.exports = withOffline(nextConfig)

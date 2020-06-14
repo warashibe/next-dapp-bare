@@ -1,5 +1,4 @@
 import { useEffect, Fragment } from "react"
-import R from "ramdam"
 import bind from "nd/bind"
 import Conf from "nd/core/Conf"
 
