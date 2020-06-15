@@ -1175,10 +1175,10 @@
   resolved "https://registry.yarnpkg.com/@next/react-refresh-utils/-/react-refresh-utils-9.4.4.tgz#d94cbb3b354a07f1f5b80e554d6b9e34aba99e41"
   integrity sha512-9nKENeWRI6kQk44TbeqleIVtNLfcS3klVUepzl/ZCqzR5Bi06uqBCD277hdVvG/wL1pxA+R/pgJQLqnF5E2wPQ==
 
-"@nextdapp/core@^0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@nextdapp/core/-/core-0.9.0.tgz#5f7d80777fb4d6cf7817d717437aca4677db68bb"
-  integrity sha512-0bpBqv3C6KK6EY5uixO9R/bfj6mhK3XunfWijE/8gv+apn+37K236EEVe55kDUlVEDA4XnnS6hvxeE2e7rWfWg==
+"@nextdapp/core@^0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@nextdapp/core/-/core-0.10.0.tgz#458c08c871e4a472a2563942ed1ba44f827e8f30"
+  integrity sha512-iPOhDpizTvn2U58qEC5oUAI45pD2OjoJbIXxmOM93nmBrGcrh72uHQ/aph6+6MhUAO955nrGZE1njd7d+XGAlA==
   dependencies:
     isomorphic-fetch "^2.2.1"
 

@@ -2,7 +2,7 @@
   "name": "next-dapp-bare",
   "version": "0.1.0",
   "dependencies": {
-    "@nextdapp/core": "^0.9.0",
+    "@nextdapp/core": "^0.10.0",
     "next": "^9.4.4",
     "next-offline": "^5.0.0",
     "normalize.css": "^8.0.1",

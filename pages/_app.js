@@ -1,8 +1,5 @@
 import { RecoilRoot } from "recoil"
 import "normalize.css"
 import conf from "nd/conf"
-export default ({ Component, pageProps }) => (
-  <RecoilRoot>
-    <Component {...pageProps} conf={conf} />
-  </RecoilRoot>
-)
+import _app from "core/_app"
+export default _app({ RecoilRoot, conf })
