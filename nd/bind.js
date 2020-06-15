@@ -1,6 +1,14 @@
-import { bind } from "@nextdapp/core"
-import { connect } from "react-redux"
+import bind from "core/bind"
+import { funcs } from "nd/funcs"
 import conf from "nd/conf"
-import React from "react"
-
-export default bind(connect, conf, React)
+import { default as atoms } from "./atoms"
+import { useRecoilState, selector, useRecoilValue, atom } from "recoil"
+export default bind({
+  funcs,
+  atoms,
+  conf,
+  selector,
+  useRecoilValue,
+  useRecoilState,
+  atom
+})

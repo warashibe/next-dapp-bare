@@ -1,6 +1,5 @@
 const path = require("path")
 const withOffline = require("next-offline")
-
 const compose = require("ramda/src/compose")
 const forEach = require("ramda/src/forEach")
 const reduce = require("ramda/src/reduce")
@@ -29,12 +28,17 @@ const nextConfig = {
             `node_modules/${v}`
           ))
       ),
-      reduce(concat, ["next-redux-wrapper", "react-redux", "ramda"]),
+      reduce(concat, ["recoil", "ramda"]),
       filter(complement(isNil)),
       pluck("peer"),
       values
     )(require("./nd/.plugins"))
+    config.resolve.alias.core = path.resolve(
+      __dirname,
+      `node_modules/@nextdapp/core/lib`
+    )
     return config
   }
 }
+
 module.exports = withOffline(nextConfig)
