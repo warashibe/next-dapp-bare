@@ -1,3 +1,3 @@
 import bind from "nd/bind"
-import { Conf as _ } from "@nextdapp/core"
+import * as _ from "@nextdapp/core/lib/components/Conf"
 export default bind(_.Component, _.props, _.funcs)
