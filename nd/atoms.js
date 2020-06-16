@@ -3,12 +3,13 @@ import { o, mergeLeft, mapObjIndexed } from "ramda"
 import init from "nd/.nextdapp-props"
 import core from "lib/init"
 
-export default o(
+const _init = o(
   mapObjIndexed((v, k) =>
     atom({
       key: k,
-      default: init[k]
+      default: v
     })
   ),
   mergeLeft(core)
 )(init)
+export default _init

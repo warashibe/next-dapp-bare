@@ -1,9 +1,10 @@
 import { mergeAll, mapObjIndexed } from "ramda"
-import { useRecoilState } from "recoil"
+import { useRecoilCallback, useRecoilState, atom } from "recoil"
 import { default as atoms } from "./atoms"
 import _func from "core/func"
 import conf from "nd/conf"
-const func = _func({ useRecoilState, atoms, conf })
+
+const func = _func({ useRecoilCallback, useRecoilState, atoms, conf, atom })
 import * as _epics from "nd/.nextdapp"
 import * as custom from "lib/custom"
 

@@ -2,7 +2,13 @@ import bind from "core/bind"
 import { funcs } from "nd/funcs"
 import conf from "nd/conf"
 import { default as atoms } from "./atoms"
-import { useRecoilState, selector, useRecoilValue, atom } from "recoil"
+import {
+  useRecoilState,
+  useRecoilCallback,
+  selector,
+  useRecoilValue,
+  atom
+} from "recoil"
 export default bind({
   funcs,
   atoms,
@@ -10,5 +16,6 @@ export default bind({
   selector,
   useRecoilValue,
   useRecoilState,
+  useRecoilCallback,
   atom
 })

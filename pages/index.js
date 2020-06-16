@@ -1,59 +1,118 @@
 import { useEffect, Fragment } from "react"
 import Conf from "nd/core/Conf"
 import bind from "nd/bind"
+import Tracker from "nd/Tracker"
 
 const Count = bind(
   props => {
     const fn = props.init()
+    const btn = {
+      display: "inline-block",
+      margin: "20px 10px",
+      cursor: "pointer",
+      backgroundColor: "#222",
+      color: "white",
+      padding: "10px",
+      borderRadius: "3px"
+    }
     return (
       <div style={{ textAlign: "center" }}>
         <div
-          style={{
-            display: "inline-block",
-            margin: "20px",
-            cursor: "pointer",
-            backgroundColor: "#222",
-            color: "white",
-            padding: "10px",
-            borderRadius: "3px"
-          }}
+          style={btn}
           onClick={() => {
-            fn.logConf()
             props.set((props.count || 0) + 1, "count")
           }}
         >
           count: {props.count || 0}
-        </div>{" "}
-        click to add count [ count * 10 = {props.count10} ]
+        </div>
+        <div
+          style={btn}
+          onClick={() => {
+            props.set((props.count2 || 0) + 1, "count2")
+          }}
+        >
+          count2: {props.count2 || 0}
+        </div>
+        <div
+          style={btn}
+          onClick={() => {
+            props.set((props.count3 || 0) + 1, "count3")
+          }}
+        >
+          count3: {props.count3 || 0}
+        </div>
+        <div>SUM [ count + count2 + count3 = {props.sum} ]</div>
+        <div>PRODUCT [ count * count2 * count3 = {props.product || 0} ]</div>
+        <div>
+          {" "}
+          <div
+            style={btn}
+            onClick={() => {
+              fn.getSquare()
+            }}
+          >
+            square: {props.square || 0}
+          </div>
+        </div>
       </div>
     )
   },
-  ["count", "count10", "logConf"]
+  [
+    "count",
+    "sum",
+    "logConf",
+    "add",
+    "product",
+    "count2",
+    "count3",
+    "square",
+    "getSquare"
+  ]
 )
 
 export default bind(
   ({ set, init, router }) => {
     const fn = init()
     useEffect(() => {
-      set({ count: 1 })
+      set({ count: 100 })
       fn.logConf()
     }, [])
     return (
       <Fragment>
         <Count />
         <Conf />
+        <Tracker
+          name="count_tracker"
+          type="any"
+          watch={["count", "count2", "count3"]}
+          props={["count", "count2", "count3"]}
+          func={({ set, props: { count, count2, count3 } }) => {
+            set(count * count2 * count3, "product")
+          }}
+        />
       </Fragment>
     )
   },
   [
     "count",
+    "count2",
+    "count3",
+    "product",
+    "square",
     "logConf",
     {
-      count10: {
-        get: atoms => ({ get }) => {
-          const text = get(atoms.count)
-          return text * 10
+      getSquare: [
+        ["product"],
+        ({ set, props: { product } }) => {
+          console.log(product)
+          set(product * product, "square")
         }
+      ],
+      sum: {
+        get: atoms => ({ get }) =>
+          (get(atoms.count) || 0) +
+          (get(atoms.count2) || 0) +
+          (get(atoms.count3) || 0)
       }
     }
   ]
