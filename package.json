@@ -1,0 +1,19 @@
+{
+  "name": "nd-core-demo",
+  "version": "0.1.0",
+  "dependencies": {
+    "next": "^9.4.4",
+    "next-offline": "^5.0.0",
+    "normalize.css": "^8.0.1",
+    "ramda": "^0.27.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "recoil": "0.0.7"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "devDependencies": {}
+}
