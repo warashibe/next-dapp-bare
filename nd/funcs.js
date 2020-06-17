@@ -1,13 +1,22 @@
-import { mergeAll, mapObjIndexed } from "ramda"
+import { mergeAll, mapObjIndexed, o, is } from "ramda"
 import { useRecoilCallback, useRecoilState, atom } from "recoil"
 import { default as atoms } from "./atoms"
 import _func from "core/func"
 import conf from "nd/conf"
-
-const func = _func({ useRecoilCallback, useRecoilState, atoms, conf, atom })
-import * as _epics from "nd/.nextdapp"
+import * as predefined from "nd/.nextdapp"
 import * as custom from "lib/custom"
+import global from "nd/global"
 
-const predefined = mapObjIndexed((v, k, o) => func(v[0], v[1]))(_epics)
-const custom_epics = mapObjIndexed((v, k, o) => func(v[0], v[1]))(custom)
-export const funcs = mergeAll([predefined, custom_epics])
+const func = _func({
+  useRecoilCallback,
+  useRecoilState,
+  atoms,
+  conf,
+  atom,
+  global
+})
+
+export const funcs = o(mapObjIndexed((v, k, o) => func(v)), mergeAll)([
+  predefined,
+  custom
+])

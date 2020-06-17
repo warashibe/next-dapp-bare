@@ -103,8 +103,7 @@ export default bind(
     {
       getSquare: [
         ["product"],
-        ({ set, props: { product } }) => {
-          console.log(product)
+        ({ global, set, props: { product } }) => {
           set(product * product, "square")
         }
       ],
