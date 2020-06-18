@@ -4,7 +4,7 @@
     "path": "@nextdapp/core",
     "key": "core",
     "noinstall": false,
-    "epics": [ ],
+    "funcs": [ ],
     "props": [ ],
     "components": [ "Conf" ]
   }
