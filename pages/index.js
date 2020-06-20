@@ -1,7 +1,6 @@
 import { useEffect, Fragment } from "react"
 import Conf from "nd/core/Conf"
-import bind from "nd/bind"
-import Tracker from "nd/Tracker"
+import { bind, Tracker } from "nd"
 
 const Count = bind(
   props => {
@@ -102,10 +101,10 @@ export default bind(
     "logConf",
     {
       getSquare: [
-        ["product"],
         ({ global, set, props: { product } }) => {
           set(product * product, "square")
-        }
+        },
+        ["product"]
       ],
       sum: {
         get: atoms => ({ get }) =>

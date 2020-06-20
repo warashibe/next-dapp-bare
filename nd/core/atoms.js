@@ -1,15 +1,14 @@
 import { atom } from "recoil"
 import { o, mergeLeft, mapObjIndexed } from "ramda"
 import init from "nd/.nextdapp-props"
-import core from "lib/init"
+import custom from "nd/init"
 
-const _init = o(
+export default o(
   mapObjIndexed((v, k) =>
     atom({
       key: k,
       default: v
     })
   ),
-  mergeLeft(core)
+  mergeLeft(custom)
 )(init)
-export default _init

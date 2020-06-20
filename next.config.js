@@ -17,7 +17,7 @@ const nextConfig = {
   generateSw: false,
   workboxOpts: {
     swDest: "public/static/service-worker.js",
-    swSrc: __dirname + "/lib/sw.js"
+    swSrc: __dirname + "/nd/sw.js"
   },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     compose(
@@ -33,10 +33,6 @@ const nextConfig = {
       pluck("peer"),
       values
     )(require("./nd/.plugins"))
-    config.resolve.alias.core = path.resolve(
-      __dirname,
-      `node_modules/@nextdapp/core/lib`
-    )
     return config
   }
 }

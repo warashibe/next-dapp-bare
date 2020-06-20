@@ -4,5 +4,4 @@ const mergeProps = (name, obj) => {
     props[`${k}$${name}`] = obj[k]
   }
 }
-
 export default props
