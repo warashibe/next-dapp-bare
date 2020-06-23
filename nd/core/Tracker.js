@@ -59,7 +59,7 @@ export default props => {
       {
         [props.name]: [
           props.func,
-          concat(props.props || [], props.func.props || [])
+          concat(props.props || props.watch, props.func.props || [])
         ]
       }
     ],

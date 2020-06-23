@@ -38,6 +38,20 @@ export default (Component, _arr = [], track) => {
     let _props = []
     let _funcs = []
     let _tracks = {}
+    const initAtom = (v, init) => {
+      if (has(v)(atoms)) {
+        _props.push(v)
+      } else if (has(v)(funcs)) {
+        _funcs.push(v)
+      } else {
+        _props.push(v)
+        atoms[v] = atom({
+          key: v,
+          default: init
+        })
+        console.log(`new atom created...${v}`)
+      }
+    }
     forEach(v => {
       if (isNonArrayObj(v)) {
         const selectors = {}
@@ -63,24 +77,12 @@ export default (Component, _arr = [], track) => {
             }
             selectors[key] = sel
           } else {
-            console.log(`unknow binding type`)
-            console.log(v2)
+            initAtom(key, v2)
           }
         })(v)
         _tracks = mergeLeft(selectors, _tracks)
       } else if (is(String)(v)) {
-        if (has(v)(atoms)) {
-          _props.push(v)
-        } else if (has(v)(funcs)) {
-          _funcs.push(v)
-        } else {
-          _props.push(v)
-          atoms[v] = atom({
-            key: v,
-            default: null
-          })
-          console.log(`new atom created...${v}`)
-        }
+        initAtom(v, null)
       } else {
         console.log(`unknow binding type`)
         console.log(v)
