@@ -1,1 +1,1 @@
-{"core":{"name":"@nextdapp/core","path":"@nextdapp/core","key":"core","noinstall":false,"funcs":[],"props":[],"components":["Conf"]}}
+{"core":{"name":"warashibe.nextdapp/core","key":"core","core":true,"funcs":[],"props":[],"components":["Conf"]}}
