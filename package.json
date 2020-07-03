@@ -11,7 +11,8 @@
     "ramda": "^0.27.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "recoil": "^0.0.10"
+    "recoil": "^0.0.10",
+    "@bit/warashibe.nextdapp.core": "file:./nd/core"
   },
   "scripts": {
     "dev": "next",
