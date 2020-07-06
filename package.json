@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@bit/warashibe.nextdapp.core": "file:./nd/core",
     "isomorphic-fetch": "^2.2.1",
     "next": "^9.4.4",
     "next-offline": "^5.0.2",
@@ -11,8 +12,7 @@
     "ramda": "^0.27.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "recoil": "^0.0.10",
-    "@bit/warashibe.nextdapp.core": "file:./nd/core"
+    "recoil": "^0.0.10"
   },
   "scripts": {
     "dev": "next",

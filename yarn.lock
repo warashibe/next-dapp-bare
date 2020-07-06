@@ -1122,6 +1122,15 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@bit/warashibe.nextdapp.core@file:./nd/core":
+  version "0.0.6"
+  dependencies:
+    isomorphic-fetch "^2.2.1"
+    next "^9.4.4"
+    ramda "^0.27.0"
+    react "^16.13.1"
+    recoil "^0.0.10"
+
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@hapi/address/-/address-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"
