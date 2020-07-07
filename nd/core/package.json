@@ -1,12 +1,12 @@
 {
   "name": "@bit/warashibe.nextdapp.core",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "homepage": "https://bit.dev/warashibe/nextdapp/core",
   "main": "index.js",
   "componentId": {
     "scope": "warashibe.nextdapp",
     "name": "core",
-    "version": "0.0.9"
+    "version": "0.0.10"
   },
   "dependencies": {
     "md5": "2.2.1",
