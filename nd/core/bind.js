@@ -95,13 +95,15 @@ export default (Component, _arr = [], track) => {
       tracker = { diff: atoms[diff_name], prev: atoms[prev_name] }
     }
     const $ = map(v => v.get)(binder)
+    for (const k in _tracks) {
+      $[k] = useRecoilValue(_tracks[k])
+    }
     return (
       <Component
         tracker={tracker}
         init={_arr => {
           forEach(v => {
             if (isNonArrayObj(v)) {
-              const selectors = {}
               mapObjIndexed((v2, key) => {
                 if (is(Function)(v2)) {
                   const fn = func(v2)

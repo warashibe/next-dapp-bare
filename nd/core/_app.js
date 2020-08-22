@@ -144,10 +144,8 @@ export default ({ links = [], scripts = [], fonts = [], plugins }) => {
         <Head>
           <link
             key="fontawesome"
-            href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
             rel="stylesheet"
-            integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-            crossorigin="anonymous"
           />
           {addIndex(map)((v, i) => <link key={`css-${i}`} {...v} />)(_links)}
           {addIndex(map)((v, i) => (
