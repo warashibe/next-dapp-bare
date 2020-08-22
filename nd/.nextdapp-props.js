@@ -4,6 +4,4 @@ const mergeProps = (name, obj, core = false, namespace = null) => {
     props[`${k}${namespace !== null ? `$${namespace}` : core ? "" : `$${name}`}`] = obj[k]
   }
 }
-import { init as web3 } from "nd/web3"
-mergeProps("web3", web3, true, null)
 export default props
