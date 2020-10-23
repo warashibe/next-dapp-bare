@@ -16,7 +16,7 @@ const nextConfig = {
   generateInDevMode: true,
   generateSw: false,
   workboxOpts: {
-    swDest: "public/static/service-worker.js",
+    swDest: "static/service-worker.js",
     swSrc: __dirname + "/nd/sw.js"
   },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
