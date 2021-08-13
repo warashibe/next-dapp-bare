@@ -6,7 +6,7 @@
   "dependencies": {
     "@bit/warashibe.nextdapp.core": "file:./nd/core",
     "isomorphic-fetch": "^2.2.1",
-    "next": "^9.4.4",
+    "next": "^11.1.0",
     "next-offline": "^5.0.2",
     "normalize.css": "^8.0.1",
     "ramda": "^0.27.0",
